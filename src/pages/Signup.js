@@ -1,19 +1,46 @@
 import React from "react";
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField, Grid, Container } from "@material-ui/core";
 
 function Signup() {
   return (
-    <div>
-      <TextField id="outlined-basic" label="Display Name" variant="outlined" />
-      <TextField id="outlined-basic" label="Email" variant="outlined" />
-      <TextField id="outlined-basic" label="Password" variant="outlined" />
-      <Button variant="contained" color="primary">
-        Submit
-      </Button>
-      <Button variant="contained" color="primary">
-        SignUp with Google
-      </Button>
-    </div>
+    <Container maxWidth="sm">
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <TextField
+            id="outlined-basic"
+            label="Display Name"
+            variant="outlined"
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            id="outlined-basic"
+            label="Password"
+            variant="outlined"
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Button variant="contained" color="primary" fullWidth>
+            Submit
+          </Button>
+        </Grid>
+        <Grid item xs={12}>
+          <Button variant="contained" color="primary" fullWidth>
+            SignUp with Google
+          </Button>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
