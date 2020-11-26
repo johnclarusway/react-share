@@ -56,7 +56,7 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             React Share
           </Typography>
-          {auth && (
+          {currentUser && (
             <div>
               <IconButton
                 aria-label="account of current user"
@@ -89,6 +89,9 @@ export default function Navbar() {
               </Menu>
             </div>
           )}
+          {/* 
+          //TODO: login & Register Links
+          */}
         </Toolbar>
       </AppBar>
     </div>
