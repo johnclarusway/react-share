@@ -1,4 +1,5 @@
 import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -7,12 +8,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Signup />
+      <Signin />
+
       {/* 
-  
-  //Route
-  //Signin
-  //Signup
+   <Signup />
+
+   //Route
   //forgotpassword
   //....
   */}
