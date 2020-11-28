@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from "react";
+import React, { useContext, useCallback, useMemo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -33,9 +33,17 @@ export default function Navbar() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const bigData = useMemo(
+    () => ({
+      a: "a",
+      b: "b",
+    }),
+    []
+  );
+
+  const handleClose = useCallback(() => {
     setAnchorEl(null);
-  };
+  }, []);
 
   const handleSignOut = useCallback(() => {
     firebase.signOut();
