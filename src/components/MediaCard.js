@@ -13,21 +13,10 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
-    margin: "auto",
-    //marginRight:'10px',
-    marginBottom:'30px',
-    transition: "0.3s",
-    boxShadow: "0 8px 40px -12px rgba(0,0,0,0.5)",
-    "&:hover": {
-      transform: 'scale(1.02)',
-      boxShadow: "0 20px 70px -13px rgba(0,0,0,0.5)"
-    }
+    maxWidth: 345,
   },
   media: {
-    height: 300,
-    width: 'auto',
-    resizeMode: "contain"
+    height: 140,
   },
 });
 

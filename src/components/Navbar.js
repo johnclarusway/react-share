@@ -8,8 +8,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
 import { FirebaseAuthContext } from "../context/AuthContext";
 import firebase from "../firebase/firebase.utils";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +31,7 @@ export default function Navbar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const history = useHistory();
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -48,6 +51,14 @@ export default function Navbar() {
   const handleSignOut = useCallback(() => {
     firebase.signOut();
   }, []);
+
+  const goToSignUpPage = () => {
+    history.push(`/register`);
+  };
+
+  const goToSignInPage = () => {
+    history.push(`/login`);
+  };
 
   return (
     <div className={classes.root}>
@@ -97,9 +108,12 @@ export default function Navbar() {
               </Menu>
             </div>
           )}
-          {/* 
-          //TODO: login & Register Links
-          */}
+          {!currentUser && (
+            <div>
+              <Button color="inherit" onClick={goToSignUpPage}>Register</Button>
+              <Button color="inherit" onClick={goToSignInPage}>Login</Button>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
     </div>

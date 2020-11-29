@@ -6,10 +6,8 @@ import MediaCard from "../components/MediaCard";
 
 const stylesFunc = makeStyles((theme) => ({
   wrapper: {
-    display:'flex',
-    flexDirection:'column',
-    minHeight: '100vh',
-    marginTop: "5rem",
+    marginTop: "2rem",
+    // height: "calc(100vh - 19.0625rem)",
     textAlign: "center",
   },
   avatar: {

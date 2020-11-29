@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import {
   Button,
   TextField,
@@ -38,7 +38,6 @@ const initialValues = {
 };
 
 function Signin() {
-  const [loginError,setLoginError]=useState(null)
   const signinStyles = stylesFunc();
 
   const handleGoogleButtonClick = () => {
@@ -47,9 +46,7 @@ function Signin() {
 
   const handleFormSubmit = (values) => {
     // alert(JSON.stringify(values, null, 2));
-    firebase.signIn(values.email, values.password).then(res=>{
-      res? setLoginError(res):setLoginError(null)
-      });
+    firebase.signIn(values.email, values.password);
   };
 
   return (
@@ -112,7 +109,6 @@ function Signin() {
                 </Button>
               </Grid>
             </Grid>
-            <p style={{textAlign:"center",color:"red"}}><small>{loginError}</small></p>
           </form>
         )}
       </Formik>

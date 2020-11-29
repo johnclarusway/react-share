@@ -1,5 +1,11 @@
 import React from "react";
-import { Button, TextField, Grid, Container } from "@material-ui/core";
+import {
+  Button,
+  TextField,
+  Grid,
+  Container,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useFormik } from "formik";
 import firebase from "../firebase/firebase.utils";
@@ -15,8 +21,13 @@ const signUpValidationSchema = Yup.object().shape({
 
 const stylesFunc = makeStyles({
   wrapper: {
-    marginTop: "10rem",
+    marginTop: "4.5rem",
+    marginBottom: "5rem",
     height: "calc(100vh - 19.0625rem)",
+  },
+  wrapperHeader: {
+    marginBottom: '1.6rem',
+    textAlign: 'center',
   },
 });
 
@@ -41,6 +52,9 @@ function Signup() {
 
   return (
     <Container className={signupStyles.wrapper} maxWidth="sm">
+      <Container className={signupStyles.wrapperHeader}>
+        <Typography variant="h4">Create Your Account</Typography>
+      </Container>
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
