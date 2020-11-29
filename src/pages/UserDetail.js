@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../helper/FetchData";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Grid, capitalize } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import { format as formatDate, parseISO } from "date-fns";
+import { formatDateFunc } from "../helper/FormatDate";
 
 const stylesFunc = makeStyles((theme) => ({
   wrapper: {
@@ -35,12 +35,7 @@ function UserDetail() {
       <Typography variant="h4">{userDetail?.firstName}</Typography>
       <Typography variant="h4">{userDetail?.lastName}</Typography>
       {userDetail?.registerDate && (
-        <Typography variant="h4">
-          {
-            //TODO: move to helper
-          }
-          {formatDate(parseISO(userDetail.registerDate), "MMM/dd/yy")}
-        </Typography>
+        <Typography variant="h4">{formatDateFunc(userDetail)}</Typography>
       )}
       <Typography variant="h4">{userDetail?.phone}</Typography>
     </Container>
