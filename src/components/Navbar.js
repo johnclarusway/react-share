@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  accountCircle :{
+    paddingLeft : "1rem",
+  }
 }));
 
 export default function Navbar() {
@@ -74,7 +77,8 @@ export default function Navbar() {
                 color="inherit"
               >
                 {currentUser?.displayName}
-                <AccountCircle />
+                
+                <AccountCircle className = {classes.accountCircle}/>
               </IconButton>
               <Menu
                 id="menu-appbar"
