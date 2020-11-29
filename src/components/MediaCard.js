@@ -49,14 +49,7 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-<<<<<<< HEAD
-        {/* 
-        //TODO: Add on click
-        */}
-        <Button size="small" color="primary">
-=======
         <Button size="small" color="primary" onClick={() => history.push(`/user/${id}`)}>
->>>>>>> 9233870f4e78e435f17c4661badfdbd485f192f7
           View Full Profile
         </Button>
         <Button
