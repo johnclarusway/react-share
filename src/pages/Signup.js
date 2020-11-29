@@ -23,9 +23,9 @@ const signUpValidationSchema = Yup.object().shape({
 
 const stylesFunc = makeStyles((theme) => ({
   wrapper: {
-    marginTop: "10rem",
-    height: "calc(100vh - 19.0625rem)",
-    textAlign: "center",
+    paddingTop: "5rem",
+    height: "calc(100vh - 9.0625rem)",
+    backgroundColor : '#bdbdbd',
   },
   avatar: {
     margin: "1rem auto",
