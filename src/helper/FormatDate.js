@@ -1,5 +1,5 @@
-import { format as formatDate, parseISO } from "date-fns";
+import { format as formatDate, parseISO, isValid } from "date-fns";
 
-export const formatDateFunc = (date_x) => {
-  return formatDate(parseISO(date_x?.registerDate), "MM/dd/yyyy");
+export const formatDateFunc = (date) => {
+  return formatDate(parseISO(date), "MM/dd/yyyy HH:mm");
 };
