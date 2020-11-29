@@ -17,7 +17,9 @@ const useStyles = makeStyles({
   },
   media: {
     height: 140,
+    backgroundSize: "contain"
   },
+
 });
 
 export default function MediaCard({ id, userImage, userName, userEmail }) {
@@ -26,10 +28,10 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea onClick={() => history.push(`/user/${id}`)}>
+      <CardActionArea >
         <CardMedia className={classes.media} image={userImage} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h9" component="h2">
             {userName}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -38,7 +40,7 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={() => history.push(`/user/${id}`)}>
           View Full Profile
         </Button>
         <Button size="small" color="primary">
