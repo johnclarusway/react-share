@@ -29,6 +29,11 @@ const useStyles = makeStyles({
     width: "auto",
     resizeMode: "contain",
   },
+  ellipsis: {
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+  },
 });
 
 export default function MediaCard({ id, userImage, userName, userEmail }) {
@@ -40,10 +45,10 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
       <CardActionArea onClick={() => history.push(`/user/${id}`)}>
         <CardMedia className={classes.media} image={userImage} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography className={classes.ellipsis} gutterBottom variant="h6" component="h2">
             {userName}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography className={classes.ellipsis} variant="body2" color="textSecondary" component="p">
             {userEmail}
           </Typography>
         </CardContent>
