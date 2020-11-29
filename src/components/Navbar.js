@@ -7,7 +7,6 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
-import Link from "@material-ui/core/Link";
 import Menu from "@material-ui/core/Menu";
 import { FirebaseAuthContext } from "../context/AuthContext";
 import firebase from "../firebase/firebase.utils";
