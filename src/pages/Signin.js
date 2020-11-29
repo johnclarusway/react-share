@@ -28,7 +28,10 @@ const stylesFunc = makeStyles((theme) => ({
   },
   avatar: {
     margin: "1rem auto",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
+  },
+  signIn: {
+    margin: "1rem",
   },
 }));
 
@@ -57,7 +60,9 @@ function Signin() {
       <Avatar className={signinStyles.avatar}>
         <LockOutlinedIcon />
       </Avatar>
-      <Typography variant="h4">Sign In</Typography>
+      <Typography className={signinStyles.signIn} variant="h4">
+        Sign In
+      </Typography>
       <Formik
         initialValues={initialValues}
         validationSchema={signInValidationSchema}

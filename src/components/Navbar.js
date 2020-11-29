@@ -97,9 +97,21 @@ export default function Navbar() {
               </Menu>
             </div>
           )}
-          {/* 
-          //TODO: login & Register Links
-          */}
+
+          <MenuItem
+            onClick={() => {
+              window.location.href = "/login";
+            }}
+          >
+            Sign in
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              window.location.href = "/register";
+            }}
+          >
+            Sign up
+          </MenuItem>
         </Toolbar>
       </AppBar>
     </div>
