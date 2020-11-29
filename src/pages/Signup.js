@@ -71,10 +71,9 @@ function Signup() {
               label="Display Name"
               variant="outlined"
               fullWidth
-              value={formik.values.displayName}
-              onChange={formik.handleChange}
-              error={formik.errors.displayName}
-              helperText={formik.errors.displayName}
+              {...formik.getFieldProps('displayName')}
+              error={formik.touched.displayName && formik.errors.displayName}
+              helperText={formik.touched.displayName && formik.errors.displayName}
             />
           </Grid>
           <Grid item xs={12}>
@@ -83,10 +82,9 @@ function Signup() {
               label="Email"
               variant="outlined"
               fullWidth
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              error={formik.errors.email}
-              helperText={formik.errors.email}
+              {...formik.getFieldProps('email')}
+              error={formik.touched.email && formik.errors.email}
+              helperText={formik.touched.email && formik.errors.email}
             />
           </Grid>
           <Grid item xs={12}>
@@ -96,10 +94,9 @@ function Signup() {
               variant="outlined"
               type="password"
               fullWidth
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              error={formik.errors.password}
-              helperText={formik.errors.password}
+              {...formik.getFieldProps('password')}
+              error={formik.touched.password && formik.errors.password}
+              helperText={formik.touched.password && formik.errors.password}
             />
           </Grid>
           <Grid item xs={12}>
