@@ -25,6 +25,7 @@ const stylesFunc = makeStyles((theme) => ({
     paddingTop: "5rem",
     height: "calc(100vh - 9.0625rem)",
     textAlign: "center",
+    backgroundColor : '#bdbdbd',
   },
   avatar: {
     margin: "1rem auto",
@@ -63,8 +64,9 @@ function Signin() {
         {({ handleSubmit, handleChange, values, errors }) => (
           <form onSubmit={handleSubmit}>
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <Grid item xs={12} >
                 <TextField
+                  className = {signinStyles.gridItem}
                   name="email"
                   label="Email"
                   variant="outlined"

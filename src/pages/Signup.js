@@ -17,6 +17,7 @@ const stylesFunc = makeStyles({
   wrapper: {
     paddingTop: "5rem",
     height: "calc(100vh - 9.0625rem)",
+    backgroundColor : '#bdbdbd',
   },
 });
 

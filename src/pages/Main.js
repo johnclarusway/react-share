@@ -10,7 +10,8 @@ const stylesFunc = makeStyles((theme) => ({
 		paddingTop: '5rem',
 		height: 'calc(100vh - 9.0625rem)',
 		textAlign: 'center',
-		overflow : 'auto'
+		overflow : 'auto',
+		backgroundColor : '#bdbdbd',
 	},
 	avatar: {
 		margin: '1rem auto',
