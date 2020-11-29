@@ -64,7 +64,7 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             React Share
           </Typography>
-          {currentUser && (
+          {currentUser ? (
             <div>
               <IconButton
                 aria-label="account of current user"
@@ -96,22 +96,24 @@ export default function Navbar() {
                 <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
               </Menu>
             </div>
+          ) : (
+            <>
+              <MenuItem
+                onClick={() => {
+                  window.location.href = "/login";
+                }}
+              >
+                Sign in
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  window.location.href = "/register";
+                }}
+              >
+                Sign up
+              </MenuItem>
+            </>
           )}
-
-          <MenuItem
-            onClick={() => {
-              window.location.href = "/login";
-            }}
-          >
-            Sign in
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              window.location.href = "/register";
-            }}
-          >
-            Sign up
-          </MenuItem>
         </Toolbar>
       </AppBar>
     </div>
