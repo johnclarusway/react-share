@@ -16,18 +16,18 @@ const useStyles = makeStyles({
     maxWidth: 300,
     margin: "auto",
     //marginRight:'10px',
-    marginBottom:'30px',
+    marginBottom: "30px",
     transition: "0.3s",
     boxShadow: "0 8px 40px -12px rgba(0,0,0,0.5)",
     "&:hover": {
-      transform: 'scale(1.02)',
-      boxShadow: "0 20px 70px -13px rgba(0,0,0,0.5)"
-    }
+      transform: "scale(1.02)",
+      boxShadow: "0 20px 70px -13px rgba(0,0,0,0.5)",
+    },
   },
   media: {
     height: 300,
-    width: 'auto',
-    resizeMode: "contain"
+    width: "auto",
+    resizeMode: "contain",
   },
 });
 
@@ -49,6 +49,9 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+        {/* 
+        //TODO: Add on click
+        */}
         <Button size="small" color="primary">
           View Full Profile
         </Button>

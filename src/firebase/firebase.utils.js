@@ -46,10 +46,9 @@ class Firebase {
   // login  signInWithEmailAndPassword
   async signIn(email, password) {
     try {
-     let res=await this.firebaseAuth.signInWithEmailAndPassword(email, password);
-      
+      await this.firebaseAuth.signInWithEmailAndPassword(email, password);
     } catch (error) {
-      return customErrorHandler(error)
+      return customErrorHandler(error);
     }
   }
 
@@ -59,6 +58,14 @@ class Firebase {
   }
 
   // forgot password sendPasswordResetEmail
+  async forgotPassword(email) {
+    try {
+      await this.firebaseAuth.sendPasswordResetEmail(email);
+      window.location.href = "/";
+    } catch (error) {
+      return customErrorHandler(error);
+    }
+  }
 }
 
 export default new Firebase();
