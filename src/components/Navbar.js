@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Navbar(props) {
+export default function Navbar() {
   const { currentUser } = useContext(FirebaseAuthContext);
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
