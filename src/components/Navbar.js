@@ -100,13 +100,6 @@ export default function Navbar(props) {
 
           <MenuItem
             onClick={() => {
-              window.location.href = "/";
-            }}
-          >
-            Home
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
               window.location.href = "/login";
             }}
           >
