@@ -17,6 +17,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { fetchData } from "../helper/FetchData";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,8 +41,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: red[500],
   },
 }));
-
-// TODO: add proptypes
 export default function UserPostCard({
   id,
   userInitial,
@@ -131,3 +130,14 @@ export default function UserPostCard({
     </Card>
   );
 }
+
+UserPostCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  userInitial: PropTypes.string,
+  title: PropTypes.string,
+  subheader: PropTypes.string,
+  imgSrc: PropTypes.string,
+  imgTitle: PropTypes.string,
+  description: PropTypes.string,
+  likes: PropTypes.bool,
+};

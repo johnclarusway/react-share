@@ -35,9 +35,17 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
   const classes = useStyles();
   const history = useHistory();
 
+  const handleProfileClick = () => {
+    history.push(`/user/${id}`);
+  };
+
+  const handleUserPostClick = () => {
+    history.push(`/user/${id}/post`);
+  };
+
   return (
     <Card className={classes.root}>
-      <CardActionArea onClick={() => history.push(`/user/${id}`)}>
+      <CardActionArea onClick={handleProfileClick}>
         <CardMedia className={classes.media} image={userImage} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -49,17 +57,10 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/* 
-        //TODO: Add on click
-        */}
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={handleProfileClick}>
           View Full Profile
         </Button>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => history.push(`/user/${id}/post`)}
-        >
+        <Button size="small" color="primary" onClick={handleUserPostClick}>
           View User Posts
         </Button>
       </CardActions>
