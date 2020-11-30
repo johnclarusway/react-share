@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  accountCircle: {
+    marginLeft: 5,
+  },
 }));
 
 export default function Navbar() {
@@ -49,7 +52,16 @@ export default function Navbar() {
 
   const handleSignOut = useCallback(() => {
     firebase.signOut();
+    history.push("/login");
   }, []);
+
+  const handleLoginClick = () => {
+    history.push("/login");
+  };
+
+  const handleRegisterClick = () => {
+    history.push("/register");
+  };
 
   return (
     <div className={classes.root}>
@@ -77,7 +89,7 @@ export default function Navbar() {
                 color="inherit"
               >
                 {currentUser?.displayName}
-                <AccountCircle />
+                <AccountCircle className={classes.accountCircle} />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -101,20 +113,8 @@ export default function Navbar() {
             </div>
           ) : (
             <>
-              <MenuItem
-                onClick={() => {
-                  window.location.href = "/login";
-                }}
-              >
-                Sign in
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  window.location.href = "/register";
-                }}
-              >
-                Sign up
-              </MenuItem>
+              <MenuItem onClick={handleLoginClick}>Sign in</MenuItem>
+              <MenuItem onClick={handleRegisterClick}>Sign up</MenuItem>
             </>
           )}
         </Toolbar>

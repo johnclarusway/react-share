@@ -19,11 +19,11 @@ const config = process.env.NODE_ENV === "development" ? devConfig : prodConfig;
 
 class Firebase {
   constructor() {
-    //TODO: add initialize check :: if (firebase.apps.length === 0)
-    firebase.initializeApp(config);
+    if (firebase.apps.length === 0) {
+      firebase.initializeApp(config);
+    }
     this.firebaseAuth = firebase.auth();
   }
-
   // register registerWithEmailAndPassword
   async register(displayName, email, password) {
     try {
