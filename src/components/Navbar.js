@@ -15,6 +15,9 @@ import firebase from "../firebase/firebase.utils";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    position:'sticky',
+    top:0,
+    zIndex:1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
