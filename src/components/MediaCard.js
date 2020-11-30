@@ -48,10 +48,10 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
       <CardActionArea onClick={handleProfileClick}>
         <CardMedia className={classes.media} image={userImage} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography noWrap gutterBottom variant="h6" component="h2">
             {userName}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography noWrap variant="body2" color="textSecondary" component="p">
             {userEmail}
           </Typography>
         </CardContent>

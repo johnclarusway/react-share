@@ -14,13 +14,18 @@ const stylesFunc = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     minHeight: "100vh",
+    maxWidth:"85%",
     marginTop: "5rem",
+    marginBottom:"2rem",
     textAlign: "center",
   },
   avatar: {
     margin: "1rem auto",
     backgroundColor: theme.palette.secondary.main,
   },
+  circular:{
+    margin:'auto',
+  }
 }));
 
 function Main() {
@@ -45,12 +50,12 @@ function Main() {
     <Container className={mainStyles.wrapper}>
       {!userList ? (
         //TODO: center loading icon
-        <CircularProgress />
+        <CircularProgress className={mainStyles.circular}/>
       ) : (
         <Grid container spacing={1}>
           {userList?.map((user) => {
             return (
-              <Grid item sm={4} xs={6} key={user?.id}>
+              <Grid item lg={3} md={4} sm={6} xs={12} key={user?.id}>
                 <MediaCard
                   id={user.id}
                   userImage={user?.picture}
