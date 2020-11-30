@@ -122,6 +122,9 @@ function Signin() {
             {/* 
             //TODO: Add register & forgot password text & links
             */}
+            <p>
+              <a href="/forgot-password">Forgot Password?</a>
+            </p>
           </form>
         )}
       </Formik>
