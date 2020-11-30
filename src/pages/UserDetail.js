@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../helper/FetchData";
 import { makeStyles } from "@material-ui/core/styles";
-import { CircularProgress} from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -13,6 +13,11 @@ const stylesFunc = makeStyles((theme) => ({
   avatar: {
     margin: "1rem auto",
     backgroundColor: theme.palette.secondary.main,
+  },
+  wrapper:{
+    display: 'flex',
+    margin: 'auto',
+    height: "calc(100vh - 19.0625rem)",
   },
   root: {
     display: 'flex',
@@ -36,6 +41,9 @@ const stylesFunc = makeStyles((theme) => ({
     maxWidth: 600,
     height: '100%',
   },
+  circular: {
+    margin:'auto',
+  }
 }));
 
 function UserDetail() {
@@ -55,32 +63,32 @@ function UserDetail() {
   }, [id]);
 
   return (
-      <Card className={mainStyles.root}>
-        <div className={mainStyles.details}>
-          <CardContent className={mainStyles.content}>
-            {!userDetail ? (
-              <CircularProgress />
-            ) : (
-                <>
-                  <Typography component="h5" variant="h5">{userDetail?.firstName} {userDetail?.lastName}</Typography>
+    <div className={mainStyles.wrapper}>
+      {!userDetail ? (
+        <CircularProgress className={mainStyles.circular} />
+      ) : (
+          <Card className={mainStyles.root}>
+            <div className={mainStyles.details}>
+              <CardContent className={mainStyles.content}>
+                <Typography component="h5" variant="h5">{userDetail?.firstName} {userDetail?.lastName}</Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                  {userDetail?.location?.country}, {userDetail?.location?.city}</Typography>
+                <Typography variant="subtitle1" color="textSecondary">{userDetail?.phone}</Typography>
+                {userDetail?.registerDate && (
                   <Typography variant="subtitle1" color="textSecondary">
-                    {userDetail?.location?.country}, {userDetail?.location?.city}</Typography>
-                  <Typography variant="subtitle1" color="textSecondary">{userDetail?.phone}</Typography>
-                  {userDetail?.registerDate && (
-                    <Typography variant="subtitle1" color="textSecondary">
-                      {formatDateFunc(userDetail.registerDate)}
-                    </Typography>
-                  )}
-                </>
-              )}
-          </CardContent>
-        </div>
-        <CardMedia
-          className={mainStyles.cover}
-          image={userDetail?.picture}
-          title={userDetail?.firstName}
-        />
-      </Card>
+                    {formatDateFunc(userDetail.registerDate)}
+                  </Typography>
+                )}
+              </CardContent>
+            </div>
+            <CardMedia
+              className={mainStyles.cover}
+              image={userDetail?.picture}
+              title={userDetail?.firstName}
+            />
+          </Card>
+        )}
+    </div>
   );
 }
 
