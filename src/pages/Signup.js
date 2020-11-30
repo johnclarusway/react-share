@@ -119,9 +119,6 @@ function Signup() {
               Already have an account? <a href="/login"> Login.</a>
             </p>
           </Grid>
-          {/* 
-            //TODO: Add sign in text & links
-            */}
         </Grid>
       </form>
     </Container>
