@@ -23,6 +23,9 @@ const stylesFunc = makeStyles((theme) => ({
     margin: "1rem auto",
     backgroundColor: theme.palette.secondary.main,
   },
+  circular:{
+    margin:'auto',
+  }
 }));
 
 function Main() {
@@ -47,7 +50,7 @@ function Main() {
     <Container className={mainStyles.wrapper}>
       {!userList ? (
         //TODO: center loading icon
-        <CircularProgress />
+        <CircularProgress className={mainStyles.circular}/>
       ) : (
         <Grid container spacing={1}>
           {userList?.map((user) => {
