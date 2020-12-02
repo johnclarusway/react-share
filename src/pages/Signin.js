@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   Button,
   TextField,
@@ -41,6 +42,7 @@ const initialValues = {
 
 function Signin() {
   const [loginError, setLoginError] = useState(null);
+  const history = useHistory();
   const signinStyles = stylesFunc();
 
   const handleGoogleButtonClick = () => {
@@ -50,7 +52,11 @@ function Signin() {
   const handleFormSubmit = (values) => {
     // alert(JSON.stringify(values, null, 2));
     firebase.signIn(values.email, values.password).then((res) => {
-      res ? setLoginError(res) : setLoginError(null);
+      if (res) {
+        setLoginError(res);
+        return;
+      }
+      history.push("/");
     });
   };
 
@@ -122,6 +128,9 @@ function Signin() {
             {/* 
             //TODO: Add register & forgot password text & links
             */}
+            <p>
+              <a href="/forgot-password">Forgot Password?</a>
+            </p>
           </form>
         )}
       </Formik>

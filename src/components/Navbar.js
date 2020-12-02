@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, useMemo } from "react";
+import React, { useContext, useCallback } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
@@ -15,9 +15,9 @@ import firebase from "../firebase/firebase.utils";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    position:'sticky',
-    top:0,
-    zIndex:1,
+    position: "sticky",
+    top: 0,
+    zIndex: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -35,7 +35,6 @@ export default function Navbar() {
   const classes = useStyles();
   const history = useHistory();
 
-  const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleMenu = (event) => {

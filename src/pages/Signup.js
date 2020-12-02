@@ -115,10 +115,10 @@ function Signup() {
             >
               SignUp with Google
             </Button>
+            <p>
+              Already have an account? <a href="/login"> Login.</a>
+            </p>
           </Grid>
-          {/* 
-            //TODO: Add sign in text & links
-            */}
         </Grid>
       </form>
     </Container>
