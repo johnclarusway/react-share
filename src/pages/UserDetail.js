@@ -116,3 +116,5 @@ export const UserDetail = React.memo(function NewsCard() {
 });
 
 export default UserDetail;
+                                        
+//comment
