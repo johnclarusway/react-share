@@ -13,10 +13,21 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 300,
+    margin: "auto",
+    //marginRight:'10px',
+    marginBottom: "30px",
+    transition: "0.3s",
+    boxShadow: "0 8px 40px -12px rgba(0,0,0,0.5)",
+    "&:hover": {
+      transform: "scale(1.02)",
+      boxShadow: "0 20px 70px -13px rgba(0,0,0,0.5)",
+    },
   },
   media: {
-    height: 140,
+    height: 300,
+    width: "auto",
+    resizeMode: "contain",
   },
 });
 
@@ -24,24 +35,32 @@ export default function MediaCard({ id, userImage, userName, userEmail }) {
   const classes = useStyles();
   const history = useHistory();
 
+  const handleProfileClick = () => {
+    history.push(`/user/${id}`);
+  };
+
+  const handleUserPostClick = () => {
+    history.push(`/user/${id}/post`);
+  };
+
   return (
     <Card className={classes.root}>
-      <CardActionArea onClick={() => history.push(`/user/${id}`)}>
+      <CardActionArea onClick={handleProfileClick}>
         <CardMedia className={classes.media} image={userImage} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography noWrap gutterBottom variant="h6" component="h2">
             {userName}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography noWrap variant="body2" color="textSecondary" component="p">
             {userEmail}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={handleProfileClick}>
           View Full Profile
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={handleUserPostClick}>
           View User Posts
         </Button>
       </CardActions>
