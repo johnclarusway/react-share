@@ -23,9 +23,10 @@ const signUpValidationSchema = Yup.object().shape({
 
 const stylesFunc = makeStyles((theme) => ({
   wrapper: {
-    marginTop: "10rem",
+    marginTop: "3rem",
     height: "calc(100vh - 19.0625rem)",
     textAlign: "center",
+    marginBottom: "12rem",
   },
   avatar: {
     margin: "1rem auto",
@@ -34,6 +35,11 @@ const stylesFunc = makeStyles((theme) => ({
   signUp: {
     margin: "1rem",
   },
+  login: {
+    textDecoration: 'none',
+    fontWeight: '600',
+    paddingLeft : '0.5rem'
+  }  
 }));
 
 function Signup() {
@@ -115,12 +121,12 @@ function Signup() {
             >
               SignUp with Google
             </Button>
-            <p>
-              Already have an account? <a href="/login"> Login.</a>
-            </p>
           </Grid>
         </Grid>
       </form>
+      <p>
+        Already have an account? <a className={signupStyles.login}  href="/login"> Login.</a>
+      </p>
     </Container>
   );
 }
