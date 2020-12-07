@@ -22,9 +22,10 @@ const signInValidationSchema = Yup.object().shape({
 
 const stylesFunc = makeStyles((theme) => ({
   wrapper: {
-    marginTop: "10rem",
+    marginTop: "3rem",
     height: "calc(100vh - 19.0625rem)",
     textAlign: "center",
+    marginBottom:"9rem",
   },
   avatar: {
     margin: "1rem auto",
@@ -32,7 +33,13 @@ const stylesFunc = makeStyles((theme) => ({
   },
   signIn: {
     margin: "1rem",
-  },
+  }, 
+  register: {
+    textDecoration: 'none',
+    fontWeight: '600',
+    paddingLeft : '0.5rem'
+  }
+  
 }));
 
 const initialValues = {
@@ -47,6 +54,8 @@ function Signin() {
 
   const handleGoogleButtonClick = () => {
     firebase.useGoogleProvider();
+    alert('You are succesfully logged in!');
+    history.push('/');
   };
 
   const handleFormSubmit = (values) => {
@@ -129,7 +138,12 @@ function Signin() {
             //TODO: Add register & forgot password text & links
             */}
             <p>
-              <a href="/forgot-password">Forgot Password?</a>
+              Don't have an account?      
+              <a className = {signinStyles.register} href="/register">Register</a>
+            </p>
+            
+            <p>
+              <a className = {signinStyles.register} href="/forgot-password">Forgot Password?</a>
             </p>
           </form>
         )}
