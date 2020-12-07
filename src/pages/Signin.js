@@ -137,17 +137,17 @@ function Signin() {
             {/* 
             //TODO: Add register & forgot password text & links
             */}
-            <p>
-              Don't have an account?      
-              <a className = {signinStyles.register} href="/register">Register</a>
-            </p>
-            
-            <p>
-              <a className = {signinStyles.register} href="/forgot-password">Forgot Password?</a>
-            </p>
           </form>
         )}
       </Formik>
+      <p>
+        Don't have an account?      
+        <a className = {signinStyles.register} href="/register">Register</a>
+      </p>
+            
+      <p>
+         <a className = {signinStyles.register} href="/forgot-password">Forgot Password?</a>
+      </p>
     </Container>
   );
 }
